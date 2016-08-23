@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="smartbnbkit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TYs-MA-zWM">
+                                <rect key="frame" x="225" y="70" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="moO-U5-zqX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ftD-z6-rom">
+                                <rect key="frame" x="225" y="120" width="150" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9a-6s-wDR">
+                                <rect key="frame" x="225" y="200" width="150" height="30"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="PQ6-r9-NSb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ftD-z6-rom" firstAttribute="leading" secondItem="TYs-MA-zWM" secondAttribute="leading" id="9a1-U1-IHd"/>
+                            <constraint firstItem="TYs-MA-zWM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pdb-yR-ouD"/>
+                            <constraint firstItem="ftD-z6-rom" firstAttribute="top" secondItem="TYs-MA-zWM" secondAttribute="bottom" constant="20" id="VNI-9s-h6a"/>
+                            <constraint firstItem="ftD-z6-rom" firstAttribute="trailing" secondItem="TYs-MA-zWM" secondAttribute="trailing" id="WYd-bG-rYy"/>
+                            <constraint firstItem="U9a-6s-wDR" firstAttribute="trailing" secondItem="ftD-z6-rom" secondAttribute="trailing" id="YXX-1q-j5C"/>
+                            <constraint firstItem="TYs-MA-zWM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="h8d-kJ-eFs"/>
+                            <constraint firstItem="U9a-6s-wDR" firstAttribute="leading" secondItem="ftD-z6-rom" secondAttribute="leading" id="jEK-Vg-gGW"/>
+                            <constraint firstItem="U9a-6s-wDR" firstAttribute="top" secondItem="ftD-z6-rom" secondAttribute="bottom" constant="50" id="qQf-aD-7qc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginField" destination="TYs-MA-zWM" id="oWe-Eb-qMo"/>
+                        <outlet property="passwordField" destination="ftD-z6-rom" id="HgZ-3K-NeC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="z1W-tf-CNT">
+            <objects>
+                <navigationController storyboardIdentifier="MainNavController" id="u1G-sw-IiB" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jX9-gl-193">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hmp-iW-CnD" kind="relationship" relationship="rootViewController" id="aqz-oT-xDC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tQV-0B-rnr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="1183"/>
+        </scene>
+        <!--smartbnbkit-->
+        <scene sceneID="UfD-p7-P2v">
+            <objects>
+                <viewController id="hmp-iW-CnD" customClass="SwitchViewController" customModule="smartbnbkit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gmP-eO-HOR"/>
+                        <viewControllerLayoutGuide type="bottom" id="0Gz-L2-TWk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4lq-H7-6Ro">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yX7-u1-h8a" userLabel="Bulb">
+                                <rect key="frame" x="236" y="114" width="128" height="128"/>
+                                <color key="backgroundColor" red="0.98775692114093938" green="0.94460465604026844" blue="0.35035654362416108" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="IFF-Pw-DH4"/>
+                                    <constraint firstAttribute="width" secondItem="yX7-u1-h8a" secondAttribute="height" multiplier="1:1" id="yaL-Hy-e4m"/>
+                                </constraints>
+                            </view>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2QD-Ik-DOj">
+                                <rect key="frame" x="275" y="292" width="51" height="31"/>
+                                <color key="onTintColor" red="0.94117647058823528" green="0.35686274509803922" blue="0.53725490196078429" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="thumbTintColor" red="0.0" green="0.69019607839999997" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="switchChanged:" destination="hmp-iW-CnD" eventType="valueChanged" id="iSN-0A-qgB"/>
+                                </connections>
+                            </switch>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fvr-PS-OGp" customClass="MaskotView" customModule="smartbnbkit" customModuleProvider="target">
+                                <rect key="frame" x="220" y="363" width="160" height="160"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AEr-wK-TPi" customClass="UIImageView">
+                                        <rect key="frame" x="5" y="5" width="50" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="VlW-mx-bAk"/>
+                                            <constraint firstAttribute="height" constant="50" id="xZy-OX-BQ0"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kc8-wy-l9S" customClass="UIImageView">
+                                        <rect key="frame" x="105" y="5" width="50" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="5UE-Nr-mMb"/>
+                                            <constraint firstAttribute="height" constant="50" id="lBM-VA-gfk"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="kc8-wy-l9S" firstAttribute="centerY" secondItem="Fvr-PS-OGp" secondAttribute="centerY" constant="-50" id="7YJ-Ns-aEJ"/>
+                                    <constraint firstItem="kc8-wy-l9S" firstAttribute="centerX" secondItem="Fvr-PS-OGp" secondAttribute="centerX" constant="50" id="A3f-fC-G7N"/>
+                                    <constraint firstItem="AEr-wK-TPi" firstAttribute="centerY" secondItem="Fvr-PS-OGp" secondAttribute="centerY" constant="-50" id="JLk-0h-95n"/>
+                                    <constraint firstAttribute="height" constant="160" id="Qp4-j9-s87"/>
+                                    <constraint firstItem="kc8-wy-l9S" firstAttribute="top" secondItem="AEr-wK-TPi" secondAttribute="top" id="bez-Gz-vLh"/>
+                                    <constraint firstItem="AEr-wK-TPi" firstAttribute="centerX" secondItem="Fvr-PS-OGp" secondAttribute="centerX" constant="-50" id="hnV-Sh-Z0R"/>
+                                    <constraint firstAttribute="width" constant="160" id="oEi-B7-Jt1"/>
+                                    <constraint firstItem="kc8-wy-l9S" firstAttribute="bottom" secondItem="AEr-wK-TPi" secondAttribute="bottom" id="w9w-CG-PKA"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="bez-Gz-vLh"/>
+                                        <exclude reference="w9w-CG-PKA"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="leftEye" destination="kc8-wy-l9S" id="ja3-M9-ZMw"/>
+                                    <outlet property="leftEyeHeight" destination="lBM-VA-gfk" id="SlW-RZ-bOE"/>
+                                    <outlet property="rightEye" destination="AEr-wK-TPi" id="BIA-SY-HZY"/>
+                                    <outlet property="rightEyeHeight" destination="xZy-OX-BQ0" id="Nro-9g-BOx"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Fvr-PS-OGp" firstAttribute="top" secondItem="2QD-Ik-DOj" secondAttribute="bottom" constant="40" id="0Y5-CH-iqN"/>
+                            <constraint firstItem="Fvr-PS-OGp" firstAttribute="centerX" secondItem="4lq-H7-6Ro" secondAttribute="centerX" id="4eg-ad-5eQ"/>
+                            <constraint firstItem="2QD-Ik-DOj" firstAttribute="top" secondItem="yX7-u1-h8a" secondAttribute="bottom" constant="50" id="Nq9-Yc-UBC"/>
+                            <constraint firstItem="2QD-Ik-DOj" firstAttribute="centerX" secondItem="4lq-H7-6Ro" secondAttribute="centerX" id="Wph-TV-BnK"/>
+                            <constraint firstItem="yX7-u1-h8a" firstAttribute="top" secondItem="gmP-eO-HOR" secondAttribute="bottom" constant="50" id="jeD-qe-T5G"/>
+                            <constraint firstItem="yX7-u1-h8a" firstAttribute="centerX" secondItem="4lq-H7-6Ro" secondAttribute="centerX" id="rU6-uJ-yRP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="smartbnbkit" id="zED-QV-1Tr"/>
+                    <connections>
+                        <outlet property="bulb" destination="yX7-u1-h8a" id="slf-vN-xRf"/>
+                        <outlet property="maskotView" destination="Fvr-PS-OGp" id="aEF-4c-suW"/>
+                        <outlet property="switcher" destination="2QD-Ik-DOj" id="WGD-uW-uPn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0zl-u5-CxE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="VtY-wh-wbC" customClass="StyleKit" customModule="smartbnbkit" customModuleProvider="target">
+                    <connections>
+                        <outletCollection property="eyeTargets" destination="AEr-wK-TPi" collectionClass="NSMutableArray" id="4QY-zB-uRB"/>
+                        <outletCollection property="eyeTargets" destination="kc8-wy-l9S" collectionClass="NSMutableArray" id="OVD-pl-hwX"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1031" y="1183"/>
+        </scene>
+    </scenes>
+</document>

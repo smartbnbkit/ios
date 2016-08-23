@@ -1,0 +1,356 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DD3899C51D6BA89F0070E668 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3899BC1D6BA89F0070E668 /* AppDelegate.swift */; };
+		DD3899C71D6BA89F0070E668 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD3899BF1D6BA89F0070E668 /* Assets.xcassets */; };
+		DD3899C81D6BA89F0070E668 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3899C11D6BA89F0070E668 /* LaunchScreen.storyboard */; };
+		DD3899C91D6BA89F0070E668 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3899C31D6BA89F0070E668 /* Main.storyboard */; };
+		DDC0DDCD1D6C9FD800CCEC9A /* StyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC0DDCC1D6C9FD800CCEC9A /* StyleKit.swift */; };
+		DDC0DDD21D6C9FF300CCEC9A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC0DDCF1D6C9FF300CCEC9A /* LoginViewController.swift */; };
+		DDC0DDD31D6C9FF300CCEC9A /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC0DDD01D6C9FF300CCEC9A /* SwitchViewController.swift */; };
+		DDC0DDD51D6CA01100CCEC9A /* MaskotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC0DDD41D6CA01100CCEC9A /* MaskotView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		DD3899A61D6BA8170070E668 /* smartbnbkit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartbnbkit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD3899B51D6BA8170070E668 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD3899BC1D6BA89F0070E668 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DD3899BF1D6BA89F0070E668 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DD3899C21D6BA89F0070E668 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DD3899C41D6BA89F0070E668 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DDC0DDCC1D6C9FD800CCEC9A /* StyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleKit.swift; sourceTree = "<group>"; };
+		DDC0DDCF1D6C9FF300CCEC9A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		DDC0DDD01D6C9FF300CCEC9A /* SwitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
+		DDC0DDD41D6CA01100CCEC9A /* MaskotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskotView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD3899A31D6BA8170070E668 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DD38999D1D6BA8170070E668 = {
+			isa = PBXGroup;
+			children = (
+				DD3899A81D6BA8170070E668 /* smartbnbkit */,
+				DD3899A71D6BA8170070E668 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DD3899A71D6BA8170070E668 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DD3899A61D6BA8170070E668 /* smartbnbkit.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD3899A81D6BA8170070E668 /* smartbnbkit */ = {
+			isa = PBXGroup;
+			children = (
+				DD3899BB1D6BA89F0070E668 /* Classes */,
+				DD3899BE1D6BA89F0070E668 /* Resources */,
+				DD3899C01D6BA89F0070E668 /* Storyboards */,
+				DD3899B51D6BA8170070E668 /* Info.plist */,
+			);
+			path = smartbnbkit;
+			sourceTree = "<group>";
+		};
+		DD3899BB1D6BA89F0070E668 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DD3899BC1D6BA89F0070E668 /* AppDelegate.swift */,
+				DDC0DDCE1D6C9FF300CCEC9A /* Controllers */,
+				DDC0DDD11D6C9FF300CCEC9A /* Views */,
+				DDC0DDCB1D6C9FD800CCEC9A /* Other */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		DD3899BE1D6BA89F0070E668 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DD3899BF1D6BA89F0070E668 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DD3899C01D6BA89F0070E668 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				DD3899C11D6BA89F0070E668 /* LaunchScreen.storyboard */,
+				DD3899C31D6BA89F0070E668 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DDC0DDCB1D6C9FD800CCEC9A /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				DDC0DDCC1D6C9FD800CCEC9A /* StyleKit.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		DDC0DDCE1D6C9FF300CCEC9A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DDC0DDCF1D6C9FF300CCEC9A /* LoginViewController.swift */,
+				DDC0DDD01D6C9FF300CCEC9A /* SwitchViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DDC0DDD11D6C9FF300CCEC9A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DDC0DDD41D6CA01100CCEC9A /* MaskotView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DD3899A51D6BA8170070E668 /* smartbnbkit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD3899B81D6BA8170070E668 /* Build configuration list for PBXNativeTarget "smartbnbkit" */;
+			buildPhases = (
+				DD3899A21D6BA8170070E668 /* Sources */,
+				DD3899A31D6BA8170070E668 /* Frameworks */,
+				DD3899A41D6BA8170070E668 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = smartbnbkit;
+			productName = smartbnbkit;
+			productReference = DD3899A61D6BA8170070E668 /* smartbnbkit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DD38999E1D6BA8170070E668 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Toptal;
+				TargetAttributes = {
+					DD3899A51D6BA8170070E668 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = DD3899A11D6BA8170070E668 /* Build configuration list for PBXProject "smartbnbkit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DD38999D1D6BA8170070E668;
+			productRefGroup = DD3899A71D6BA8170070E668 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DD3899A51D6BA8170070E668 /* smartbnbkit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD3899A41D6BA8170070E668 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD3899C91D6BA89F0070E668 /* Main.storyboard in Resources */,
+				DD3899C71D6BA89F0070E668 /* Assets.xcassets in Resources */,
+				DD3899C81D6BA89F0070E668 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DD3899A21D6BA8170070E668 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DDC0DDD51D6CA01100CCEC9A /* MaskotView.swift in Sources */,
+				DDC0DDD31D6C9FF300CCEC9A /* SwitchViewController.swift in Sources */,
+				DDC0DDCD1D6C9FD800CCEC9A /* StyleKit.swift in Sources */,
+				DDC0DDD21D6C9FF300CCEC9A /* LoginViewController.swift in Sources */,
+				DD3899C51D6BA89F0070E668 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DD3899C11D6BA89F0070E668 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD3899C21D6BA89F0070E668 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DD3899C31D6BA89F0070E668 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD3899C41D6BA89F0070E668 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DD3899B61D6BA8170070E668 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DD3899B71D6BA8170070E668 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DD3899B91D6BA8170070E668 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = smartbnbkit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.toptal.smartbnbkit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DD3899BA1D6BA8170070E668 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = smartbnbkit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.toptal.smartbnbkit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DD3899A11D6BA8170070E668 /* Build configuration list for PBXProject "smartbnbkit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD3899B61D6BA8170070E668 /* Debug */,
+				DD3899B71D6BA8170070E668 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD3899B81D6BA8170070E668 /* Build configuration list for PBXNativeTarget "smartbnbkit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD3899B91D6BA8170070E668 /* Debug */,
+				DD3899BA1D6BA8170070E668 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DD38999E1D6BA8170070E668 /* Project object */;
+}
