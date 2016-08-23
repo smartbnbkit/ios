@@ -10,17 +10,14 @@ import UIKit
 
 class SwitchViewController: UIViewController {
 
-    @IBOutlet var bulb: UIView!
     @IBOutlet var switcher: UISwitch!
     @IBOutlet var maskotView: MaskotView!
 
     var currentBulbState: Bool = false {
         didSet {
             if currentBulbState {
-                bulb.backgroundColor = UIColor(red: 252/255, green: 241/255, blue: 89/255, alpha: 1.0)
                 switcher.on = true
             } else {
-                bulb.backgroundColor = UIColor.grayColor()
                 switcher.on = false
             }
         }
@@ -28,23 +25,49 @@ class SwitchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        bulb.layer.borderColor = UIColor.darkGrayColor().CGColor
-        bulb.layer.borderWidth = 1/UIScreen.mainScreen().scale
-        currentBulbState = false
+        currentBulbState = true
+        self.switcher.hidden = true
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         getState()
-
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-            self.maskotView.blink()
-        })
     }
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        bulb.layer.cornerRadius = bulb.frame.size.width/2
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if (!SwitchViewController.tempLoggedIn) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+            self.maskotView.blink()
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                self.maskotView.blink()
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                    self.showLogin()
+                })
+            })
+        })
+        } else {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                self.maskotView.blink(left: false)
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                    self.maskotView.blink(left: true, right: false)
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
+                        self.maskotView.blink()
+                        self.switcher.hidden = false
+                        self.switcher.alpha = 0
+                        UIView.animateWithDuration(0.15, delay: 0.15, options: [], animations: {
+                            self.switcher.alpha = 1
+                            }, completion: { (_) in
+                        })
+                    })
+                })
+            })
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,6 +76,17 @@ class SwitchViewController: UIViewController {
     }
 
     // MARK: -
+    private static var tempLoggedIn = false
+    func showLogin() {
+        if !SwitchViewController.tempLoggedIn {
+            let loginVc = self.storyboard!.instantiateViewControllerWithIdentifier(String(LoginViewController))
+            loginVc.modalPresentationStyle = .OverFullScreen
+            self.presentViewController(loginVc, animated: true, completion: nil)
+            self.switcher.hidden = true
+            SwitchViewController.tempLoggedIn = true
+        }
+    }
+
     @IBAction func switchChanged(sender: UISwitch) {
         toggleState()
     }
