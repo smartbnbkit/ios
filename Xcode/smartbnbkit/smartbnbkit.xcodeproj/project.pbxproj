@@ -11,6 +11,8 @@
 		DD3899C71D6BA89F0070E668 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD3899BF1D6BA89F0070E668 /* Assets.xcassets */; };
 		DD3899C81D6BA89F0070E668 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3899C11D6BA89F0070E668 /* LaunchScreen.storyboard */; };
 		DD3899C91D6BA89F0070E668 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3899C31D6BA89F0070E668 /* Main.storyboard */; };
+		DDB019751D70E4FD00F250BD /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB019731D70E4FD00F250BD /* OpenSans-Regular.ttf */; };
+		DDB019761D70E4FD00F250BD /* OpenSans-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDB019741D70E4FD00F250BD /* OpenSans-Semibold.ttf */; };
 		DDC0DDCD1D6C9FD800CCEC9A /* StyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC0DDCC1D6C9FD800CCEC9A /* StyleKit.swift */; };
 		DDC0DDD21D6C9FF300CCEC9A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC0DDCF1D6C9FF300CCEC9A /* LoginViewController.swift */; };
 		DDC0DDD31D6C9FF300CCEC9A /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC0DDD01D6C9FF300CCEC9A /* SwitchViewController.swift */; };
@@ -24,6 +26,8 @@
 		DD3899BF1D6BA89F0070E668 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD3899C21D6BA89F0070E668 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD3899C41D6BA89F0070E668 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DDB019731D70E4FD00F250BD /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		DDB019741D70E4FD00F250BD /* OpenSans-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Semibold.ttf"; sourceTree = "<group>"; };
 		DDC0DDCC1D6C9FD800CCEC9A /* StyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleKit.swift; sourceTree = "<group>"; };
 		DDC0DDCF1D6C9FF300CCEC9A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DDC0DDD01D6C9FF300CCEC9A /* SwitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				DD3899BF1D6BA89F0070E668 /* Assets.xcassets */,
+				DDB019721D70E4FD00F250BD /* Fonts */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -94,6 +99,15 @@
 				DD3899C31D6BA89F0070E668 /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		DDB019721D70E4FD00F250BD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DDB019731D70E4FD00F250BD /* OpenSans-Regular.ttf */,
+				DDB019741D70E4FD00F250BD /* OpenSans-Semibold.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		DDC0DDCB1D6C9FD800CCEC9A /* Other */ = {
@@ -182,7 +196,9 @@
 			files = (
 				DD3899C91D6BA89F0070E668 /* Main.storyboard in Resources */,
 				DD3899C71D6BA89F0070E668 /* Assets.xcassets in Resources */,
+				DDB019751D70E4FD00F250BD /* OpenSans-Regular.ttf in Resources */,
 				DD3899C81D6BA89F0070E668 /* LaunchScreen.storyboard in Resources */,
+				DDB019761D70E4FD00F250BD /* OpenSans-Semibold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

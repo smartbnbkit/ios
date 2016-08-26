@@ -13,9 +13,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    func setupAppearance() {
+        UIBarButtonItem.appearance().tintColor = StyleKit.appWhiteColor
+        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName: UIFont(name: "OpenSans", size: 17)!, NSForegroundColorAttributeName: StyleKit.appWhiteColor]
+        UINavigationBar.appearance().barTintColor = StyleKit.appBlueColor
+    }
 
+    // MARK: -
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        setupAppearance()
         return true
     }
 
@@ -43,4 +49,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-

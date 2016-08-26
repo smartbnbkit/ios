@@ -8,15 +8,20 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
+    // TODO: embed in scroll view to fix issue with keyboard on iPhone 4
+
+    @IBOutlet var maskotView: MaskotView!
     @IBOutlet var loginField: UITextField!
     @IBOutlet var passwordField: UITextField!
+    @IBOutlet var loginButton: UIButton!
 
     // MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        self.setupViews()
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +30,21 @@ class LoginViewController: UIViewController {
     }
 
     // MARK: -
+    func setupViews() {
+        loginField.textColor = StyleKit.appDarkGray
+        loginField.layer.cornerRadius = loginField.frame.height/2
+        loginField.layer.borderWidth = 1
+        loginField.layer.borderColor = StyleKit.appLightGray.CGColor
+
+        passwordField.textColor = StyleKit.appDarkGray
+        passwordField.layer.cornerRadius = passwordField.frame.height/2
+        passwordField.layer.borderWidth = 1
+        passwordField.layer.borderColor = StyleKit.appLightGray.CGColor
+
+        loginButton.layer.cornerRadius = loginButton.frame.height/2
+    }
+
+    // MARK: - Actions
     @IBAction func loginTapped() {
         guard let login = loginField.text else {
             loginField.becomeFirstResponder()
@@ -40,5 +60,15 @@ class LoginViewController: UIViewController {
 
         let mainNavController = self.storyboard?.instantiateViewControllerWithIdentifier("MainNavController")
         view.window!.rootViewController = mainNavController
+    }
+
+    @IBAction func forgotTapped() {
+        // TODO: forgot password NYI
+    }
+
+    // MARK: - UITextFieldDelegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
     }
 }

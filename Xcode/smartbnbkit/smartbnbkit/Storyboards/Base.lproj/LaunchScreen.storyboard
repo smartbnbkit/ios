@@ -16,12 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="viN-xs-rMj">
-                                <rect key="frame" x="190" y="190" width="220" height="220"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="220" id="C0V-NG-LiP"/>
-                                    <constraint firstAttribute="height" constant="220" id="qmi-Sa-p4x"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="viN-xs-rMj">
+                                <rect key="frame" x="228" y="257" width="144" height="86"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -37,6 +33,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo" width="110" height="110"/>
+        <image name="logo" width="144" height="86"/>
     </resources>
 </document>

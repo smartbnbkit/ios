@@ -11,7 +11,6 @@ import UIKit
 class SwitchViewController: UIViewController {
 
     @IBOutlet var switcher: UISwitch!
-    @IBOutlet var maskotView: MaskotView!
 
     var currentBulbState: Bool = false {
         didSet {
@@ -32,6 +31,7 @@ class SwitchViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         getState()
+        self.navigationController?.navigationBar.barStyle = .Black
     }
 
     override func viewWillLayoutSubviews() {
@@ -40,51 +40,17 @@ class SwitchViewController: UIViewController {
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        if (!SwitchViewController.tempLoggedIn) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-            self.maskotView.blink()
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-                self.maskotView.blink()
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-                    self.showLogin()
-                })
-            })
-        })
-        } else {
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-                self.maskotView.blink(left: false)
-                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.5 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-                    self.maskotView.blink(left: true, right: false)
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-                        self.maskotView.blink()
-                        self.switcher.hidden = false
-                        self.switcher.alpha = 0
-                        UIView.animateWithDuration(0.15, delay: 0.15, options: [], animations: {
-                            self.switcher.alpha = 1
-                            }, completion: { (_) in
-                        })
-                    })
-                })
-            })
-        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: -
-    private static var tempLoggedIn = false
-    func showLogin() {
-        if !SwitchViewController.tempLoggedIn {
-            let loginVc = self.storyboard!.instantiateViewControllerWithIdentifier(String(LoginViewController))
-            loginVc.modalPresentationStyle = .OverFullScreen
-            self.presentViewController(loginVc, animated: true, completion: nil)
-            self.switcher.hidden = true
-            SwitchViewController.tempLoggedIn = true
-        }
+    @IBAction func logout() {
+        let loginVc = self.storyboard!.instantiateViewControllerWithIdentifier(String(LoginViewController))
+        view.window!.rootViewController = loginVc
     }
 
     @IBAction func switchChanged(sender: UISwitch) {
