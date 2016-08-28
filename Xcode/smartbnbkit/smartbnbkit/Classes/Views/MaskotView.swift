@@ -45,7 +45,10 @@ class MaskotView: UIView {
         }
         UIView.animateWithDuration(duration/2, delay: 0.0, options: .CurveEaseOut, animations: {
             self.layoutIfNeeded()
-        }) { [unowned self] (_) in
+        }) { [weak self] (_) in
+            guard let `self` = self else {
+                return
+            }
             self.rightEyeHeight.constant = self.eyeHeight
             self.leftEyeHeight.constant = self.eyeHeight
             UIView.animateWithDuration(duration/2, delay: 0.0, options: .CurveEaseIn, animations: {

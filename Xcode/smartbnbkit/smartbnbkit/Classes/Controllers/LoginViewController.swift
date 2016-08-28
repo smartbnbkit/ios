@@ -9,19 +9,19 @@
 import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
-
-    // TODO: embed in scroll view to fix issue with keyboard on iPhone 4
-
+    
     @IBOutlet var maskotView: MaskotView!
     @IBOutlet var loginField: UITextField!
     @IBOutlet var passwordField: UITextField!
     @IBOutlet var loginButton: UIButton!
-
+    
+    @IBOutlet var scrollBottom: NSLayoutConstraint!
+    
     // MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.setupViews()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillChangeFrame), name: UIKeyboardWillChangeFrameNotification, object: nil)
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -54,10 +54,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func blink(delay delay: Double) {
         self.maskotView.blink()
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.3 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), { [weak self] in
-            self?.maskotView.blink()
+            guard let `self` = self else {
+                return
+            }
+            self.maskotView.blink()
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delay/2 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), { [weak self] in
-                self?.maskotView.blink()
-                self?.blink(delay: delay)
+                guard let `self` = self else {
+                    return
+                }
+                self.maskotView.blink()
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delay/2 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), { [weak self] in
+                    guard let `self` = self else {
+                        return
+                    }
+                    self.blink(delay: delay+0.5)
+                    })
                 })
             })
 
@@ -83,6 +94,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func forgotTapped() {
         // TODO: forgot password NYI
+    }
+    
+    // MARK: -
+    func keyboardWillChangeFrame(notif: NSNotification) {
+        let userInfo = notif.userInfo!
+        let rect = userInfo[UIKeyboardFrameEndUserInfoKey]!.CGRectValue()
+        let options = UIViewAnimationOptions(rawValue: UInt((userInfo[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).integerValue << 16))
+        scrollBottom.constant = self.view.window!.bounds.size.height - rect.origin.y;
+        UIView.animateWithDuration(userInfo[UIKeyboardAnimationDurationUserInfoKey]!.doubleValue, delay: 0.0, options: options, animations: {
+            self.view.layoutIfNeeded()
+            }) { (_) in
+        }
     }
 
     // MARK: - UITextFieldDelegate
