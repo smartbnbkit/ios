@@ -11,13 +11,19 @@ import UIKit
 class SwitchViewController: UIViewController {
 
     @IBOutlet var switcher: UISwitch!
+    @IBOutlet var imageViewStatus: UIImageView!
+    @IBOutlet var labelStatus: UILabel!
 
     var currentBulbState: Bool = false {
         didSet {
             if currentBulbState {
                 switcher.on = true
+                imageViewStatus.image = UIImage(named: "image_devices_on")
+                labelStatus.text = "Devices are on and running"
             } else {
                 switcher.on = false
+                imageViewStatus.image = UIImage(named: "image_devices_off")
+                labelStatus.text = "Devices are off"
             }
         }
     }
@@ -25,7 +31,6 @@ class SwitchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         currentBulbState = true
-        self.switcher.hidden = true
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -59,7 +64,12 @@ class SwitchViewController: UIViewController {
 
     // MARK: -
     func getState() {
-        // TODO: NYI
+        // TODO: Add spinner and check internet connection
+        WebServices.sharedInstance.getSwitchStatus({ (status) in
+            self.currentBulbState = status
+            }) { (error) in
+                Utils.showErrorAlert(self, error: error)
+        }
     }
 
     func toggleState() {
@@ -71,12 +81,21 @@ class SwitchViewController: UIViewController {
     }
 
     func turnOn() {
-        // TODO: NYI
-        currentBulbState = true
+        // TODO: Add spinner and check internet connection
+
+        WebServices.sharedInstance.changeSwitchStatus(true, completed: { (status) in
+            self.currentBulbState = status
+            }) { (error) in
+                Utils.showErrorAlert(self, error: error)
+        }
     }
 
     func turnOff() {
-        // TODO: NYI
-        currentBulbState = false
+        // TODO: Add spinner and check internet connection
+        WebServices.sharedInstance.changeSwitchStatus(false, completed: { (status) in
+            self.currentBulbState = status
+        }) { (error) in
+            Utils.showErrorAlert(self, error: error)
+        }
     }
 }
