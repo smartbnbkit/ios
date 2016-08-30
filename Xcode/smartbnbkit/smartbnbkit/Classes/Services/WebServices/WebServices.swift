@@ -31,6 +31,7 @@ class WebServices: NSObject {
                     
                     let json = JSON(value)
                     
+                    // TODO: implement general error handler
                     let error = json["error"].stringValue
                     if error.characters.count > 0 {
                         failed(Utils.appError(error, code: nil))
