@@ -30,7 +30,14 @@ class WebServices: NSObject {
                     }
                     
                     let json = JSON(value)
-                    let token : String = json["token"].stringValue
+                    
+                    let error = json["error"].stringValue
+                    if error.characters.count > 0 {
+                        failed(Utils.appError(error, code: nil))
+                        return
+                    }
+                    
+                    let token = json["token"].stringValue
                     if token.characters.count > 0 {
                         NSUserDefaults.standardUserDefaults().setValue(token, forKey: Constants.USER_TOKEN)
                         NSUserDefaults.standardUserDefaults().synchronize()
