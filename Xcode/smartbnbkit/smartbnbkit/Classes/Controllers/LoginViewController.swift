@@ -14,7 +14,8 @@ class LoginViewController: UIViewController {
     @IBOutlet var loginField: UITextField!
     @IBOutlet var passwordField: UITextField!
     @IBOutlet var loginButton: UIButton!
-    @IBOutlet var scrollView: UIScrollView!
+
+    @IBOutlet var scrollBottom: NSLayoutConstraint!
 
     // MARK: - View Lifecycle Methods
     override func viewDidLoad() {
@@ -23,52 +24,44 @@ class LoginViewController: UIViewController {
         self.setupViews()
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        loginField.layer.cornerRadius = loginField.frame.height/2
+        passwordField.layer.cornerRadius = passwordField.frame.height/2
+        loginButton.layer.cornerRadius = loginButton.frame.height/2
+    }
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
             self.blink(delay: 4.0)
         })
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.keyboardWillChange(_:)),
-                                                         name: UIKeyboardWillChangeFrameNotification,
-                                                         object: nil)
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.keyboardWillChange(_:)),
-                                                         name: UIKeyboardWillHideNotification,
-                                                         object: nil)
+
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.keyboardWillChangeFrame(_:)), name: UIKeyboardWillChangeFrameNotification, object: nil)
     }
-    
+
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        NSNotificationCenter.defaultCenter().removeObserver(self,
-                                                            name: UIKeyboardWillChangeFrameNotification,
-                                                            object: nil)
-        
-        NSNotificationCenter.defaultCenter().removeObserver(self,
-                                                            name: UIKeyboardWillHideNotification,
-                                                            object: nil)
+
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillChangeFrameNotification, object: nil)
     }
 
     // MARK: -
-    
+
     func hideKeyboard () {
         view.endEditing(true)
     }
-    
+
     func setupViews() {
         loginField.textColor = StyleKit.appDarkGray
-        loginField.layer.cornerRadius = loginField.frame.height/2
         loginField.layer.borderWidth = 1
         loginField.layer.borderColor = StyleKit.appLightGray.CGColor
 
         passwordField.textColor = StyleKit.appDarkGray
-        passwordField.layer.cornerRadius = passwordField.frame.height/2
         passwordField.layer.borderWidth = 1
         passwordField.layer.borderColor = StyleKit.appLightGray.CGColor
 
-        loginButton.layer.cornerRadius = loginButton.frame.height/2
-        
         let tap = UITapGestureRecognizer.init(target: self, action: #selector(LoginViewController.hideKeyboard))
         view.addGestureRecognizer(tap)
     }
@@ -76,60 +69,50 @@ class LoginViewController: UIViewController {
     func blink(delay delay: Double) {
         self.maskotView.blink()
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.3 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), { [weak self] in
-            self?.maskotView.blink()
+            guard let `self` = self else {
+                return
+            }
+            self.maskotView.blink()
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delay/2 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), { [weak self] in
-                self?.maskotView.blink()
-                self?.blink(delay: delay)
+                guard let `self` = self else {
+                    return
+                }
+                self.maskotView.blink()
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delay/2 * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), { [weak self] in
+                    guard let `self` = self else {
+                        return
+                    }
+                    self.blink(delay: delay+0.5)
+                    })
                 })
             })
     }
-    
-    func keyboardWillChange (notification : NSNotification) {
-        let notificationInfo : Dictionary = (notification.userInfo as! Dictionary<String, AnyObject>)
-        let keyboardSize = notificationInfo[UIKeyboardFrameEndUserInfoKey]?.CGRectValue().size.height
-        
-        if notification.name ==  UIKeyboardWillHideNotification{
-            scrollView.setContentOffset(CGPointZero, animated: true)
-            return
-        }
-        
-        var tf : UITextField?
-        
-        if loginField.isFirstResponder() {
-            tf = loginField
-        }
-        else if passwordField.isFirstResponder() {
-            tf = passwordField
-        }
-        
-        if tf != nil {
-            let tfRect = tf?.superview!.convertRect(tf!.frame, toView: scrollView)
-            
-            if CGRectGetMaxY(tfRect!) > view.frame.size.height - keyboardSize! - 35 {
-                scrollView.setContentOffset(CGPointMake(0, CGRectGetMaxY(tfRect!) - view.frame.size.height + keyboardSize! + 35), animated: true)
-            }
-            else {
-                scrollView.setContentOffset(CGPointZero, animated: true)
-            }
+
+    func keyboardWillChangeFrame(notif: NSNotification) {
+        let userInfo = notif.userInfo!
+        let rect = userInfo[UIKeyboardFrameEndUserInfoKey]!.CGRectValue()
+        let options = UIViewAnimationOptions(rawValue: UInt((userInfo[UIKeyboardAnimationCurveUserInfoKey] as! NSNumber).integerValue << 16))
+        scrollBottom.constant = self.view.window!.bounds.size.height - rect.origin.y
+        UIView.animateWithDuration(userInfo[UIKeyboardAnimationDurationUserInfoKey]!.doubleValue, delay: 0.0, options: options, animations: {
+            self.view.layoutIfNeeded()
+        }) { (_) in
         }
     }
-    
+
     func isFormValid () -> Bool {
         if loginField.text?.characters.count > 0 && passwordField.text?.characters.count > 0 {
             return true
-        }
-        else if loginField.text?.characters.count == 0 {
+        } else if loginField.text?.characters.count == 0 {
             loginField.becomeFirstResponder()
-        }
-        else if passwordField.text?.characters.count == 0 {
+        } else if passwordField.text?.characters.count == 0 {
             passwordField.becomeFirstResponder()
         }
-        
+
         return false
     }
 
     // MARK: - Actions Methods
-    
+
     @IBAction func loginTapped() {
         if isFormValid() {
             guard let login = loginField.text else {
@@ -159,16 +142,15 @@ class LoginViewController: UIViewController {
 // MARK: - UITextFieldDelegate
 
 extension LoginViewController : UITextFieldDelegate {
-    
+
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        
+
         if textField == loginField {
             passwordField.becomeFirstResponder()
-        }
-        else if textField == passwordField {
+        } else if textField == passwordField {
             passwordField.resignFirstResponder()
         }
-        
+
         return false
     }
 }
