@@ -93,7 +93,7 @@ class LoginViewController: UIViewController {
             return
         }
         
-        var tf : UITextField? = UITextField()
+        var tf : UITextField?
         
         if loginField.isFirstResponder() {
             tf = loginField
