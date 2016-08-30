@@ -15,7 +15,7 @@ class Utils: NSObject {
         
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil));
 
-        viewControler.presentViewController(viewControler, animated: true, completion: nil)
+        viewControler.presentViewController(alert, animated: true, completion: nil)
     }
     
     static func showErrorAlert (viewControler : UIViewController, error : NSError?) {
@@ -23,7 +23,7 @@ class Utils: NSObject {
         
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil));
         
-        viewControler.presentViewController(viewControler, animated: true, completion: nil)
+        viewControler.presentViewController(alert, animated: true, completion: nil)
     }
     
     static func appError (message : String?, code : Int?) -> NSError {
