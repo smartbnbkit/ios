@@ -11,7 +11,7 @@
 		22CC73D11D7337B100CFA589 /* WebServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CC73D01D7337B100CFA589 /* WebServices.swift */; };
 		22CC73D31D73385900CFA589 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CC73D21D73385900CFA589 /* Constants.swift */; };
 		22CC73D51D7339C300CFA589 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CC73D41D7339C300CFA589 /* Utils.swift */; };
-		42A5391DE9386DEC00DDD87A /* Pods_smartbnbkit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12B903AEB7109F49832E2D38 /* Pods_smartbnbkit.framework */; };
+		BE5E9B9133EA70FC270AEE16 /* Pods_smartbnbkit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDF027207F577A31613FF339 /* Pods_smartbnbkit.framework */; };
 		DD3899C51D6BA89F0070E668 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3899BC1D6BA89F0070E668 /* AppDelegate.swift */; };
 		DD3899C71D6BA89F0070E668 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD3899BF1D6BA89F0070E668 /* Assets.xcassets */; };
 		DD3899C81D6BA89F0070E668 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD3899C11D6BA89F0070E668 /* LaunchScreen.storyboard */; };
@@ -25,13 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0E0F38AFF441D89413B7BF53 /* Pods-smartbnbkit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smartbnbkit.release.xcconfig"; path = "Pods/Target Support Files/Pods-smartbnbkit/Pods-smartbnbkit.release.xcconfig"; sourceTree = "<group>"; };
-		12B903AEB7109F49832E2D38 /* Pods_smartbnbkit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smartbnbkit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		22CC73CE1D73363500CFA589 /* URLProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLProvider.swift; sourceTree = "<group>"; };
 		22CC73D01D7337B100CFA589 /* WebServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebServices.swift; path = Services/WebServices/WebServices.swift; sourceTree = "<group>"; };
 		22CC73D21D73385900CFA589 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		22CC73D41D7339C300CFA589 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		45494F0E4B716C4B56DDCA7A /* Pods-smartbnbkit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smartbnbkit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-smartbnbkit/Pods-smartbnbkit.debug.xcconfig"; sourceTree = "<group>"; };
+		68EEBA9F7A7FE4CAA6827C5F /* Pods-smartbnbkit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smartbnbkit.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-smartbnbkit/Pods-smartbnbkit.debug.xcconfig"; sourceTree = "<group>"; };
+		92D05E572B6D63063169EBEF /* Pods-smartbnbkit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-smartbnbkit.release.xcconfig"; path = "../Pods/Target Support Files/Pods-smartbnbkit/Pods-smartbnbkit.release.xcconfig"; sourceTree = "<group>"; };
 		DD3899A61D6BA8170070E668 /* smartbnbkit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = smartbnbkit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD3899B51D6BA8170070E668 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD3899BC1D6BA89F0070E668 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +43,7 @@
 		DDC0DDCF1D6C9FF300CCEC9A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DDC0DDD01D6C9FF300CCEC9A /* SwitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
 		DDC0DDD41D6CA01100CCEC9A /* MaskotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskotView.swift; sourceTree = "<group>"; };
+		FDF027207F577A31613FF339 /* Pods_smartbnbkit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_smartbnbkit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42A5391DE9386DEC00DDD87A /* Pods_smartbnbkit.framework in Frameworks */,
+				BE5E9B9133EA70FC270AEE16 /* Pods_smartbnbkit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,7 +61,7 @@
 		07FA0192C18857294F44BD79 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				12B903AEB7109F49832E2D38 /* Pods_smartbnbkit.framework */,
+				FDF027207F577A31613FF339 /* Pods_smartbnbkit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -90,11 +90,11 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		566BBA517F388B0389CBC5D7 /* Pods */ = {
+		6A13515805A1BAF6CD6C7275 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				45494F0E4B716C4B56DDCA7A /* Pods-smartbnbkit.debug.xcconfig */,
-				0E0F38AFF441D89413B7BF53 /* Pods-smartbnbkit.release.xcconfig */,
+				68EEBA9F7A7FE4CAA6827C5F /* Pods-smartbnbkit.debug.xcconfig */,
+				92D05E572B6D63063169EBEF /* Pods-smartbnbkit.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -104,8 +104,8 @@
 			children = (
 				DD3899A81D6BA8170070E668 /* smartbnbkit */,
 				DD3899A71D6BA8170070E668 /* Products */,
-				566BBA517F388B0389CBC5D7 /* Pods */,
 				07FA0192C18857294F44BD79 /* Frameworks */,
+				6A13515805A1BAF6CD6C7275 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -310,7 +310,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-smartbnbkit/Pods-smartbnbkit-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-smartbnbkit/Pods-smartbnbkit-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EEE0C4DFDC94C64A9242F346 /* [CP] Copy Pods Resources */ = {
@@ -325,7 +325,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-smartbnbkit/Pods-smartbnbkit-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-smartbnbkit/Pods-smartbnbkit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -456,7 +456,7 @@
 		};
 		DD3899B91D6BA8170070E668 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45494F0E4B716C4B56DDCA7A /* Pods-smartbnbkit.debug.xcconfig */;
+			baseConfigurationReference = 68EEBA9F7A7FE4CAA6827C5F /* Pods-smartbnbkit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = smartbnbkit/Info.plist;
@@ -468,7 +468,7 @@
 		};
 		DD3899BA1D6BA8170070E668 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E0F38AFF441D89413B7BF53 /* Pods-smartbnbkit.release.xcconfig */;
+			baseConfigurationReference = 92D05E572B6D63063169EBEF /* Pods-smartbnbkit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = smartbnbkit/Info.plist;
